@@ -7,7 +7,7 @@ heading = "temperatures and facts about the moon"
 imprimir1 = heading.title()
 print(imprimir1)
 
-#División de una cadena
+#!División de una cadena
 temperatures = """Daylight: 260 F
 ... Nighttime: -280 F"""
 # print(temperatures)
@@ -66,7 +66,7 @@ for item in mars_temperature.split():
 ...
 30
 
-#Valore negativos
+#!Valores negativos
 empiezaConBarra = "-60".startswith('-')
 True
 print(empiezaConBarra)
@@ -76,7 +76,7 @@ if "30 C".endswith("C"):
 
 #'This temperature is in Celsius'
 
-#Transformar texto
+#!Transformar texto
 replace = "Saturn has a daytime temperature of -170 degrees Celsius, while Mars has -28 Celsius.".replace("Celsius", "C")
 print(replace)
 'Saturn has a daytime temperature of -170 degrees C, while Mars has -28 C.'
@@ -97,7 +97,7 @@ print(moon_facts)
 'The Moon is drifting away from the Earth.\nOn average, the Moon is moving about 4cm every year'
 
 
-#Exercices
+#!Exercices
 text = """Interesting facts about the Moon. The Moon is Earth's only satellite. There are several interesting facts about the Moon and how it affects life here on Earth. On average, the Moon moves 4cm away from the Earth every year. This yearly drift is not significant enough to cause immediate effects on Earth. The highest daylight temperature of the Moon is 127 C."""
 
 sentences = text.split(".")

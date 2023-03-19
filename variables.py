@@ -7,7 +7,7 @@ from datetime import date;
 # Tipo Booleano => True, False
 
 
-# Examples
+#! Examples
 planets_in_solar_system = 8 # int, pluto used to be the 9th planet, but is too small
 distance_to_alpha_centauri = 4.367 # float, lightyears
 can_liftoff = True
@@ -25,7 +25,7 @@ print(todayDate);
 print("Today's date:", todayDate);
 todayDAte2 = print("Today's date is: " + str(date.today()))
 
-# Import para capturar elementos de la consola
+#! Import para capturar elementos de la consola
 
 import sys
 

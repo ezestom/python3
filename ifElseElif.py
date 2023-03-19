@@ -1,6 +1,6 @@
 # Escritura de instrucciones if
 
-# >>> IF
+#! >>> IF
 
 a = 97
 b = 55
@@ -14,7 +14,7 @@ d = 27
 if c >= d:
     print(c);
 
-# >>> IF ELSE
+#! >>> IF ELSE
 
 a = 24
 b = 44
@@ -23,7 +23,7 @@ if a <= 0:
 else:
     print(b)
 
-# >>> IF ELIF 
+#! >>> IF ELIF 
 
 a = 93
 b = 27
@@ -32,7 +32,7 @@ if a >= b:
 elif a == b:
     print("a is equal to b")
 
-# >>> IF ELIF ELSE
+#! >>> IF ELIF ELSE
 
 a = 93
 b = 27
@@ -43,7 +43,7 @@ elif a < b:
 else: 
     print ("a is equal to b")   
 
-# More examples
+#! More examples
 
 a = 16
 b = 25
