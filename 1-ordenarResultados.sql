@@ -1,18 +1,19 @@
 
 #------------------------------------Ordenación de los resultados
-#!Uso de la cláusula ORDER BY
+#------------------------------------Uso de la cláusula ORDER BY
 
 SELECT<select_list>
 FROM <table_source>
 ORDER BY <order_by_list> [ASC|DESC];
 
-Dirección de la ordenación
+#--------------------------------------Dirección de la ordenación
+
 SELECT ProductCategoryID AS Category, ProductName
 FROM Production.Product
 ORDER BY Category ASC, Price DESC;
 
 #------------------------------------Limitación de los resultados ordenados
-Usar la cláusula TOP
+--------------------------------------Usar la cláusula TOP
 
 SELECT TOP (N) <column_list>
 FROM <table_source>
@@ -23,29 +24,29 @@ SELECT TOP 10 Name, ListPrice
 FROM Production.Product
 ORDER BY ListPrice DESC;
 
-#Uso de WITH TIES
+#--------------------------------------Uso de WITH TIES
 
 SELECT TOP 10 WITH TIES Name, ListPrice
 FROM Production.Product
 ORDER BY ListPrice DESC;
 
-#Uso de PERCENT
+#--------------------------------------Uso de PERCENT
 SELECT TOP 10 PERCENT Name, ListPrice
 FROM SalesLT.Product
 ORDER BY ListPrice DESC;
 
-#Sintaxis de OFFSET-FETCH
+#--------------------------------------Sintaxis de OFFSET-FETCH
 OFFSET { integer_constant | offset_row_count_expression } { ROW | ROWS }
 [FETCH { FIRST | NEXT } {integer_constant | fetch_row_count_expression } { ROW | ROWS } ONLY]
 
-#Uso de OFFSET-FETCH
+#--------------------------------------Uso de OFFSET-FETCH
 SELECT ProductID, ProductName, ListPrice
 FROM Production.Product
 ORDER BY ListPrice DESC 
 OFFSET 0 ROWS --Skip zero rows
 FETCH NEXT 10 ROWS ONLY; --Get the next 10
 
-#Eliminación de duplicados
+#--------------------------------------Eliminación de duplicados
 Example
 SELECT City, CountryRegion
 FROM Production.Supplier
@@ -55,8 +56,8 @@ SELECT DISTINCT City, CountryRegion
 FROM Production.Supplier
 ORDER BY CountryRegion, City;
 
-#------------------------------------Filtrado de los datos con predicados
-La estructura de la cláusula WHERE
+#--------------------------------------Filtrado de los datos con predicados
+--------------------------------------La estructura de la cláusula WHERE
 
 SELECT ProductCategoryID AS Category, ProductName
 FROM Production.Product
@@ -66,20 +67,20 @@ SELECT ProductCategoryID AS Category, ProductName
 FROM Production.Product
 WHERE ListPrice < 10.00;
 
-#IS NULL/IS NOT NULL
+#--------------------------------------IS NULL/IS NOT NULL
 SELECT ProductCategoryID AS Category, ProductName
 FROM Production.Product
 WHERE ProductName IS NOT NULL;
 
-#Varias condiciones
+#--------------------------------------Varias condiciones
 
 SELECT ProductCategoryID AS Category, ProductName
 FROM Production.Product
 WHERE ProductCategoryID = 2
     AND ListPrice < 10.00;
 
-#Operadores de comparación
-#IN
+#--------------------------------------Operadores de comparación
+#--------------------------------------IN
 
 SELECT ProductCategoryID AS Category, ProductName
 FROM Production.Product
@@ -91,7 +92,7 @@ SELECT ProductCategoryID AS Category, ProductName
 FROM Production.Product
 WHERE ProductCategoryID IN (2, 3, 4);
 
-#BETWEEN
+#--------------------------------------BETWEEN
 
 SELECT ProductCategoryID AS Category, ProductName
 FROM Production.Product
@@ -115,7 +116,7 @@ FROM Production.Product
 WHERE ModifiedDate >= '2012-01-01' 
     AND ModifiedDate < '2013-01-01';
 
-#LIKE
+#--------------------------------------LIKE
 
 SELECT Name, ListPrice
 FROM SalesLT.Product

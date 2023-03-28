@@ -1,6 +1,6 @@
-#Examen de la instrucción SELECT
+#--------------------------------------Examen de la instrucción SELECT
 
-#mySQL
+#--------------------------------------mySQL
 SELECT OrderDate, COUNT(OrderID) AS Orders
 FROM Sales.SalesOrder
 WHERE Status = 'Shipped'
@@ -8,7 +8,7 @@ GROUP BY OrderDate
 HAVING COUNT(OrderID) > 1
 ORDER BY OrderDate DESC;
 
-#ServerSQL
+#--------------------------------------ServerSQL
 FROM Sales.SalesOrder
 WHERE Status = 'Shipped'
 GROUP BY OrderDate 
@@ -16,26 +16,26 @@ HAVING COUNT(OrderID) > 1
 SELECT OrderDate, COUNT(OrderID) AS Orders
 ORDER BY OrderDate DESC;
 
-#Selección de todas las columnas
+#--------------------------------------Selección de todas las columnas
 SELECT * FROM Production.Product;
 
-#Selección de columnas específicas
+#--------------------------------------Selección de columnas específicas
 SELECT ProductID, Name, ListPrice, StandardCost
 FROM Production.Product;
 
-#Selección de expresiones
+#--------------------------------------Selección de expresiones
 SELECT ProductID,
       Name + '(' + ProductNumber + ')',
   ListPrice - StandardCost
 FROM Production.Product;
 
-#Especificación de alias de columna
+#--------------------------------------Especificación de alias de columna
 SELECT ProductID AS ID,
       Name + '(' + ProductNumber + ')' AS ProductName,
   ListPrice - StandardCost AS Markup
 FROM Production.Product;
 
-#? Trabajo con tipos de datos
+#--------------------------------------Trabajo con tipos de datos
 
 Valor numérico
 Exacto
@@ -81,7 +81,8 @@ Tipos de geometría espacial
 Tipos de geografía espacial
 table
 
-#!CAST y TRY_CAST
+#--------------------------------------CAST y TRY_CAST
+
 SELECT CAST(ProductID AS varchar(4)) + ': ' + Name AS ProductName
 FROM Production.Product;
 
@@ -91,7 +92,8 @@ FROM Production.Product;  # --> Error: Error de conversión al convertir el valo
 SELECT TRY_CAST(Size AS integer) As NumericSize
 FROM Production.Product;
 
-#!CONVERT y TRY_CONVERT
+#--------------------------------------CONVERT y TRY_CONVERT
+
 SELECT CONVERT(varchar(4), ProductID) + ': ' + Name AS ProductName
 FROM Production.Product;
 
@@ -101,22 +103,25 @@ SELECT SellStartDate,
 FROM SalesLT.Product;
 
 
-#!PARSE y TRY_PARSE
+#--------------------------------------PARSE y TRY_PARSE
+
 SELECT PARSE('01/01/2021' AS date) AS DateValue,
    PARSE('$199.99' AS money) AS MoneyValue;
 
-#!STR
+#--------------------------------------STR
 SELECT ProductID,  '$' + STR(ListPrice) AS Price
 FROM Production.Product;
 
-#!Controlar valores NULL
-ISNULL
+#--------------------------------------Controlar valores NULL
+--------------------------------------ISNULL
+
 SELECT FirstName,
       ISNULL(MiddleName, 'None') AS MiddleIfAny,
       LastName
 FROM Sales.Customer;
 
-!#COALESCE
+#--------------------------------------COALESCE
+
 SELECT COALESCE ( expression1, expression2, [ ,...n ] )
 
 SELECT EmployeeID,
@@ -125,7 +130,7 @@ SELECT EmployeeID,
                 Commission * SalesQty) AS WeeklyEarnings
 FROM HR.Wages;
 
-#NULLIF
+#--------------------------------------NULLIF
 SELECT SalesOrderID,
       ProductID,
       UnitPrice,
